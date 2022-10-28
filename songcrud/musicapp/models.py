@@ -1,28 +1,28 @@
 from django.db import models
-from datetime import datetime
+# from datetime import datetime
 
 # Create your models here.
 
-class Artiste(models.Model):
-    first_name = models.CharField(max_length=40)
-    last_name = models.CharField(max_length=40)
-    age = models.IntegerField()
+# class Artiste(models.Model):
+#     first_name = models.CharField(max_length=40)
+#     last_name = models.CharField(max_length=40)
+#     age = models.IntegerField()
 
-    def __str__(self):
-        return self.first_name
+#     def __str__(self):
+#         return self.first_name
 
-class Song(models.Model):
-    artiste_id = models.ForeignKey(Artiste, on_delete=models.CASCADE)
-    title = models.CharField(max_length=40)
-    date_released = models.DateField(default=datetime.today)
-    likes = models.IntegerField()
+# class Song(models.Model):
+#     #artiste = models.ForeignKey(Artiste, on_delete=models.CASCADE)
+#     title = models.CharField(max_length=40)
+#     date_released = models.DateField(default=datetime.today)
+#     likes = models.IntegerField()
 
-    def __str__(self):
-         return self.title
+#     def __str__(self):
+#          return self.title
 
-class Lyric(models.Model):
-    song_id = models.ForeignKey(Song, on_delete=models.CASCADE)
-    content = models.CharField(max_length=100000)
+# class Lyric(models.Model):
+#     #song = models.ForeignKey(Song, on_delete=models.CASCADE)
+# #     content = models.CharField(max_length=100000)
 
-    def __str__(self):
-        return self.content
+#     def __str__(self):
+#         return self.content
